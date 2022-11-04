@@ -23,10 +23,12 @@
                     </li>
                     <!-- menu title -->
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Components</li>
+
+
                     <!-- stages list-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
-                            <div class="pull-left"><i class="ti-palette"></i><span
+                            <div class="pull-left"><i class="fa fa-building"></i><span
                                     class="right-nav-text">{{trans("main_trans.stages")}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -35,32 +37,78 @@
                             <li><a href="{{route('stages.index')}}">{{trans("main_trans.stages_list")}}</a></li>
                         </ul>
                     </li>
+
+
                     {{-- grades list --}}
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
-                            <div class="pull-left"><i class="ti-palette"></i><span
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#grades-menu">
+                            <div class="pull-left"><i class="fa fa-building"></i><span
                                     class="right-nav-text">{{trans("main_trans.grades")}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
+                        <ul id="grades-menu" class="collapse" data-parent="#sidebarnav">
                             <li><a href="{{route('grades.index')}}">{{trans("main_trans.grades_list")}}</a></li>
                         </ul>
                     </li>
-                    <!-- menu item calendar-->
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">--}}
-{{--                            <div class="pull-left"><i class="ti-calendar"></i><span--}}
-{{--                                    class="right-nav-text">Calender</span></div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li><a href="calendar.html">Events Calendar </a></li>--}}
-{{--                            <li><a href="calendar-list.html">List Calendar</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-                    <!-- menu item todo-->
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu">
+                            <div class="pull-left"><i class="fa fa-building"></i><span
+                                    class="right-nav-text">{{trans("main_trans.sections")}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="sections-menu" class="collapse" data-parent="#sidebarnav">
+                            <li><a href="{{route('sections.index')}}">{{trans("main_trans.List_sections")}}</a></li>
+                        </ul>
+                    </li>
+
+
+                    <!-- students-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu">
+                            <div class="pull-left"><i class="fas fa-user-graduate"></i></i></i><span
+                                    class="right-nav-text">{{trans('main_trans.students')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="students-menu" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="calendar.html">Events Calendar </a> </li>
+                            <li> <a href="calendar-list.html">List Calendar</a> </li>
+                        </ul>
+                    </li>
+
+
+
+                    <!-- Teachers-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Teachers-menu">
+                            <div class="pull-left"><i class="fas fa-chalkboard-teacher"></i></i><span
+                                    class="right-nav-text">{{trans('main_trans.Teachers')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="Teachers-menu" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="calendar.html">Events Calendar </a> </li>
+                            <li> <a href="calendar-list.html">List Calendar</a> </li>
+                        </ul>
+                    </li>
+
+                    <!-- Parents-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Parents-menu">
+                            <div class="pull-left"><i class="fas fa-user-tie"></i><span
+                                    class="right-nav-text">{{trans('main_trans.Parents')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="Parents-menu" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="#">{{trans('main_trans.List_Parents')}}</a> </li>
+                            <li> <a href="{{url('add-parent')}}">{{trans('main_trans.Add_Parent')}}</a> </li>
+                        </ul>
+                    </li>
+
                     <li>
                         <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">Todo
                                 list</span> </a>

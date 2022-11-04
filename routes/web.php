@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\Section\SectionController;
 use App\Http\Controllers\Stages\StageController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -36,11 +37,17 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
         Route::resource('stages', StageController::class);
 
 //        -------------------------------------------------------------------------
-        Route::delete('stages/delete-all',[GradeController::class, 'deleteAll'])->name('delete-all');
-        Route::post('stages/filter',[GradeController::class, 'filterGrade'])->name('filter');
+        Route::delete('stages/delete-all', [GradeController::class, 'deleteAll'])->name('delete-all');
+        Route::post('stages/filter', [GradeController::class, 'filterGrade'])->name('filter');
         Route::resource('grades', GradeController::class);
+        Route::get('/gradesS/{stage_id}', [GradeController::class,"get_grades_by_stage"])->name('get_grades_by_stage');
 
         //        -------------------------------------------------------------------------
+
+        Route::resource('sections', SectionController::class);
+
+        //        --------------------------------parents---------------------------------
+        Route::view("add-parent","livewire.show_form");
 
     }
     );

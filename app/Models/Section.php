@@ -6,28 +6,31 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Stage extends Model
+class Section extends Model
 {
     use HasFactory;
     use HasTranslations;
 
-    protected $table = 'stages';
+    protected $table = 'sections';
     public $timestamps = true;
     protected $fillable = [
         'name',
-        'notes'
+        'status',
+        'grade_id',
+        "stage_id"
     ];
     public $translatable = [
         'name'
     ];
 
-    public function grades()
+    public function grade()
     {
-        return $this->hasMany(Grade::class);
+        return $this->belongsTo(Grade::class);
     }
 
-    public function sections()
+    public function stage()
     {
-        return $this->hasMany(Section::class);
+        return $this->belongsTo(Stage::class);
     }
+
 }
