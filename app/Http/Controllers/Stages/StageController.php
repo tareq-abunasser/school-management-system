@@ -125,7 +125,7 @@ class StageController extends Controller
         try {
             $stage = Stage::findOrFail($request->id);
             $grades = $stage->grades;
-//            $grades = Grade::where('stage_id',$request->id)->pluck('grade_id');
+//            $grades = Grade::where('stage_id',$request->id)->pluck('stage_id');
             if (count($grades) != 0) {
                 toastr()->error("warning this stage contains " . count($grades) . " grades you must delete its grades first");
                 return redirect()->route('stages.index');

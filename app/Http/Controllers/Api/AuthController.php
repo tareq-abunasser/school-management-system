@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 
@@ -31,7 +32,7 @@ class AuthController extends BaseController
 
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
-        $user = \App\User::create($input);
+        $user = User::create($input);
         $success['token'] = $user->createToken('MyApp')->plainTextToken;
         $success['name'] = $user->name;
 

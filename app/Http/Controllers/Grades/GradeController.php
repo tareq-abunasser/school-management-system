@@ -125,7 +125,9 @@ class GradeController extends Controller
     public function deleteAll(Request $request)
     {
         try {
+            # this will make incoming string "55,44,36" as array [ 0 => "55",1 => "44", 2 => "36"]
             $ids = explode(",", $request->ids);
+            # because ids is array of id not s single id
             Grade::whereIn('id', $ids)->delete();
             toastr()->error(trans('messages.Delete'));
             return redirect()->route('grades.index');
@@ -142,6 +144,12 @@ class GradeController extends Controller
 
     }
 
+    public function get_grades_by_stage($stage_id)
+    {
+        $grades = Grade::where("stage_id", $stage_id)->pluck("name", "id");
+        return $grades;
+
+    }
 }
 
 ?>

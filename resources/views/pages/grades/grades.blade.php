@@ -352,6 +352,7 @@
     <!-- row closed -->
 @endsection
 @section('js')
+    {{--    this will show the modall  if the user check one or more checkbox , if user not check any box then modolla will not appear--}}
     <script type="text/javascript">
         $(function () {
             $("#btn_delete_all").click(function () {
