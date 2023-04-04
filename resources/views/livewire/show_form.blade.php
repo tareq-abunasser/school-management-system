@@ -18,7 +18,7 @@
         <div class="col-md-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
-                    @livewire('add-parent')
+                    @livewire('s-parent')
 {{--                    <livewire:add-parent />--}}
                 </div>
             </div>

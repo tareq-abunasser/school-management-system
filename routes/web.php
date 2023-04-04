@@ -47,7 +47,7 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
         Route::resource('sections', SectionController::class);
 
         //        --------------------------------parents---------------------------------
-        Route::view("add-parent","livewire.show_form");
+        Route::view("parent","livewire.show_form");
 
     }
     );
